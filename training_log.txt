@@ -1,0 +1,1043 @@
+2025-02-01 07:58:52,239 - INFO - 🚀 Starting Whisper Small Fine-Tuning
+2025-02-01 07:58:53,105 - INFO - Using device: cuda
+2025-02-01 07:58:53,105 - INFO - Loading Common Voice Swahili dataset...
+2025-02-01 07:58:58,372 - INFO - Removing unwanted columns...
+2025-02-01 07:58:59,171 - INFO - First training sample: {'audio': {'path': '/home/k_nurf/.cache/huggingface/datasets/downloads/extracted/4f4d5d46531f94b2f271cef961df198a672dfee132a2719de3d40c3254ed0fdf/sw_train_0/common_voice_sw_28660554.mp3', 'array': array([ 5.52202634e-29, -2.20881053e-29, -4.57539325e-29, ...,
+        1.07723235e-06, -3.07742812e-06, -4.13509224e-06]), 'sampling_rate': 48000}, 'sentence': 'Uko katika pembe la kusini-mashariki kabisa la nchi.'}
+2025-02-01 07:58:59,171 - INFO - Loading WhisperFeatureExtractor & Tokenizer...
+2025-02-01 07:59:01,172 - INFO - Resampling audio to 16kHz...
+2025-02-01 07:59:01,175 - INFO - Applying data preprocessing...
+2025-02-01 07:59:02,344 - INFO - Loading Whisper Small model...
+2025-02-01 07:59:04,892 - INFO - Initializing Data Collator...
+2025-02-01 07:59:04,893 - INFO - Loading Word Error Rate (WER) metric...
+2025-02-01 07:59:07,080 - INFO - Defining training arguments...
+2025-02-01 07:59:07,210 - INFO - Initializing Trainer...
+2025-02-01 07:59:07,260 - INFO - Saving processor before training...
+2025-02-01 07:59:07,423 - INFO - 🚀 Starting training...
+2025-02-01 08:12:55,355 - INFO - 🚀 Starting Whisper Small Fine-Tuning
+2025-02-01 08:12:55,706 - INFO - Using device: cuda
+2025-02-01 08:12:55,706 - INFO - Loading Common Voice Swahili dataset...
+2025-02-01 08:12:59,378 - INFO - Removing unwanted columns...
+2025-02-01 08:12:59,957 - INFO - First training sample: {'audio': {'path': '/home/k_nurf/.cache/huggingface/datasets/downloads/extracted/4f4d5d46531f94b2f271cef961df198a672dfee132a2719de3d40c3254ed0fdf/sw_train_0/common_voice_sw_28660554.mp3', 'array': array([ 5.52202634e-29, -2.20881053e-29, -4.57539325e-29, ...,
+        1.07723235e-06, -3.07742812e-06, -4.13509224e-06]), 'sampling_rate': 48000}, 'sentence': 'Uko katika pembe la kusini-mashariki kabisa la nchi.'}
+2025-02-01 08:12:59,957 - INFO - Loading WhisperFeatureExtractor & Tokenizer...
+2025-02-01 08:13:01,935 - INFO - Resampling audio to 16kHz...
+2025-02-01 08:13:01,937 - INFO - Applying data preprocessing...
+2025-02-01 08:13:03,127 - INFO - Loading Whisper Small model...
+2025-02-01 08:13:05,092 - INFO - Initializing Data Collator...
+2025-02-01 08:13:05,092 - INFO - Loading Word Error Rate (WER) metric...
+2025-02-01 08:13:06,459 - INFO - Defining training arguments...
+2025-02-01 08:13:06,488 - INFO - Initializing Trainer...
+2025-02-01 08:13:06,513 - INFO - Saving processor before training...
+2025-02-01 08:13:06,700 - INFO - 🚀 Starting Training with the following configuration:
+2025-02-01 08:13:06,700 - INFO - Trainer Arguments: Seq2SeqTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+average_tokens_across_devices=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=1000,
+eval_strategy=IntervalStrategy.STEPS,
+eval_use_gather_object=False,
+evaluation_strategy=steps,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=225,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=1e-05,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./whisper-small-sw/runs/Feb01_08-13-06_K-NURF,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=25,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_kwargs={},
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=4000,
+metric_for_best_model=wer,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=OptimizerNames.ADAMW_TORCH,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./whisper-small-sw,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+predict_with_generate=True,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=./whisper-small-sw,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=1000,
+save_strategy=SaveStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+sortish_sampler=False,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_liger_kernel=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=500,
+weight_decay=0.0,
+)
+2025-02-01 08:13:06,700 - INFO - Training Dataset Size: 36847
+2025-02-01 08:13:06,701 - INFO - Evaluation Dataset Size: 10238
+2025-02-01 08:13:06,701 - INFO - 🚀 Training started...
+2025-02-01 08:13:06,701 - INFO - 🚀 Starting training...
+2025-02-01 08:15:17,184 - INFO - Training Step: 25
+2025-02-01 08:15:17,184 - INFO - loss: 2.1735
+2025-02-01 08:15:17,184 - INFO - grad_norm: 20.93427276611328
+2025-02-01 08:15:17,184 - INFO - learning_rate: 4.4e-07
+2025-02-01 08:15:17,185 - INFO - epoch: 0.010855405992184108
+2025-02-01 08:17:29,395 - INFO - Training Step: 50
+2025-02-01 08:17:29,396 - INFO - loss: 1.9807
+2025-02-01 08:17:29,396 - INFO - grad_norm: 16.741804122924805
+2025-02-01 08:17:29,396 - INFO - learning_rate: 9.400000000000001e-07
+2025-02-01 08:17:29,396 - INFO - epoch: 0.021710811984368215
+2025-02-01 08:19:40,003 - INFO - Training Step: 75
+2025-02-01 08:19:40,003 - INFO - loss: 1.6411
+2025-02-01 08:19:40,004 - INFO - grad_norm: 13.242424964904785
+2025-02-01 08:19:40,004 - INFO - learning_rate: 1.44e-06
+2025-02-01 08:19:40,004 - INFO - epoch: 0.03256621797655232
+2025-02-01 08:21:52,949 - INFO - Training Step: 100
+2025-02-01 08:21:52,949 - INFO - loss: 1.3425
+2025-02-01 08:21:52,949 - INFO - grad_norm: 12.849715232849121
+2025-02-01 08:21:52,949 - INFO - learning_rate: 1.94e-06
+2025-02-01 08:21:52,949 - INFO - epoch: 0.04342162396873643
+2025-02-01 08:24:00,569 - INFO - Training Step: 125
+2025-02-01 08:24:00,570 - INFO - loss: 1.2369
+2025-02-01 08:24:00,570 - INFO - grad_norm: 10.725493431091309
+2025-02-01 08:24:00,570 - INFO - learning_rate: 2.4400000000000004e-06
+2025-02-01 08:24:00,570 - INFO - epoch: 0.054277029960920535
+2025-02-01 08:26:19,846 - INFO - Training Step: 150
+2025-02-01 08:26:19,847 - INFO - loss: 1.1214
+2025-02-01 08:26:19,847 - INFO - grad_norm: 10.931336402893066
+2025-02-01 08:26:19,847 - INFO - learning_rate: 2.9400000000000002e-06
+2025-02-01 08:26:19,847 - INFO - epoch: 0.06513243595310464
+2025-02-01 08:28:29,572 - INFO - Training Step: 175
+2025-02-01 08:28:29,573 - INFO - loss: 1.0325
+2025-02-01 08:28:29,573 - INFO - grad_norm: 12.182524681091309
+2025-02-01 08:28:29,573 - INFO - learning_rate: 3.44e-06
+2025-02-01 08:28:29,573 - INFO - epoch: 0.07598784194528875
+2025-02-01 08:30:54,193 - INFO - Training Step: 200
+2025-02-01 08:30:54,193 - INFO - loss: 0.9918
+2025-02-01 08:30:54,194 - INFO - grad_norm: 12.239032745361328
+2025-02-01 08:30:54,194 - INFO - learning_rate: 3.94e-06
+2025-02-01 08:30:54,194 - INFO - epoch: 0.08684324793747286
+2025-02-01 08:33:15,737 - INFO - Training Step: 225
+2025-02-01 08:33:15,737 - INFO - loss: 0.9264
+2025-02-01 08:33:15,738 - INFO - grad_norm: 10.533174514770508
+2025-02-01 08:33:15,738 - INFO - learning_rate: 4.440000000000001e-06
+2025-02-01 08:33:15,738 - INFO - epoch: 0.09769865392965697
+2025-02-01 08:35:25,313 - INFO - Training Step: 250
+2025-02-01 08:35:25,313 - INFO - loss: 0.8656
+2025-02-01 08:35:25,313 - INFO - grad_norm: 12.293813705444336
+2025-02-01 08:35:25,313 - INFO - learning_rate: 4.94e-06
+2025-02-01 08:35:25,313 - INFO - epoch: 0.10855405992184107
+2025-02-01 08:37:36,305 - INFO - Training Step: 275
+2025-02-01 08:37:36,305 - INFO - loss: 0.8158
+2025-02-01 08:37:36,305 - INFO - grad_norm: 11.259024620056152
+2025-02-01 08:37:36,305 - INFO - learning_rate: 5.4400000000000004e-06
+2025-02-01 08:37:36,305 - INFO - epoch: 0.11940946591402518
+2025-02-01 08:39:47,328 - INFO - Training Step: 300
+2025-02-01 08:39:47,328 - INFO - loss: 0.8238
+2025-02-01 08:39:47,329 - INFO - grad_norm: 10.415582656860352
+2025-02-01 08:39:47,329 - INFO - learning_rate: 5.94e-06
+2025-02-01 08:39:47,329 - INFO - epoch: 0.13026487190620928
+2025-02-01 08:42:06,893 - INFO - Training Step: 325
+2025-02-01 08:42:06,893 - INFO - loss: 0.7449
+2025-02-01 08:42:06,893 - INFO - grad_norm: 10.261573791503906
+2025-02-01 08:42:06,894 - INFO - learning_rate: 6.440000000000001e-06
+2025-02-01 08:42:06,894 - INFO - epoch: 0.1411202778983934
+2025-02-01 08:44:27,733 - INFO - Training Step: 350
+2025-02-01 08:44:27,733 - INFO - loss: 0.756
+2025-02-01 08:44:27,734 - INFO - grad_norm: 11.291160583496094
+2025-02-01 08:44:27,734 - INFO - learning_rate: 6.9400000000000005e-06
+2025-02-01 08:44:27,734 - INFO - epoch: 0.1519756838905775
+2025-02-01 08:46:43,533 - INFO - Training Step: 375
+2025-02-01 08:46:43,534 - INFO - loss: 0.7294
+2025-02-01 08:46:43,534 - INFO - grad_norm: 10.28663444519043
+2025-02-01 08:46:43,534 - INFO - learning_rate: 7.440000000000001e-06
+2025-02-01 08:46:43,534 - INFO - epoch: 0.16283108988276163
+2025-02-01 08:48:59,188 - INFO - Training Step: 400
+2025-02-01 08:48:59,189 - INFO - loss: 0.6551
+2025-02-01 08:48:59,189 - INFO - grad_norm: 9.931083679199219
+2025-02-01 08:48:59,189 - INFO - learning_rate: 7.94e-06
+2025-02-01 08:48:59,189 - INFO - epoch: 0.17368649587494572
+2025-02-01 08:51:09,262 - INFO - Training Step: 425
+2025-02-01 08:51:09,262 - INFO - loss: 0.6941
+2025-02-01 08:51:09,262 - INFO - grad_norm: 8.46352481842041
+2025-02-01 08:51:09,262 - INFO - learning_rate: 8.44e-06
+2025-02-01 08:51:09,262 - INFO - epoch: 0.18454190186712982
+2025-02-01 08:53:23,281 - INFO - Training Step: 450
+2025-02-01 08:53:23,281 - INFO - loss: 0.6463
+2025-02-01 08:53:23,282 - INFO - grad_norm: 9.69615364074707
+2025-02-01 08:53:23,282 - INFO - learning_rate: 8.94e-06
+2025-02-01 08:53:23,282 - INFO - epoch: 0.19539730785931395
+2025-02-01 08:55:38,130 - INFO - Training Step: 475
+2025-02-01 08:55:38,131 - INFO - loss: 0.6386
+2025-02-01 08:55:38,131 - INFO - grad_norm: 8.142298698425293
+2025-02-01 08:55:38,131 - INFO - learning_rate: 9.440000000000001e-06
+2025-02-01 08:55:38,131 - INFO - epoch: 0.20625271385149804
+2025-02-01 08:57:54,942 - INFO - Training Step: 500
+2025-02-01 08:57:54,943 - INFO - loss: 0.5845
+2025-02-01 08:57:54,943 - INFO - grad_norm: 10.657668113708496
+2025-02-01 08:57:54,943 - INFO - learning_rate: 9.940000000000001e-06
+2025-02-01 08:57:54,943 - INFO - epoch: 0.21710811984368214
+2025-02-01 09:00:09,214 - INFO - Training Step: 525
+2025-02-01 09:00:09,214 - INFO - loss: 0.625
+2025-02-01 09:00:09,214 - INFO - grad_norm: 8.361588478088379
+2025-02-01 09:00:09,214 - INFO - learning_rate: 9.937142857142858e-06
+2025-02-01 09:00:09,215 - INFO - epoch: 0.22796352583586627
+2025-02-01 09:02:21,879 - INFO - Training Step: 550
+2025-02-01 09:02:21,879 - INFO - loss: 0.5655
+2025-02-01 09:02:21,879 - INFO - grad_norm: 7.118654251098633
+2025-02-01 09:02:21,879 - INFO - learning_rate: 9.865714285714285e-06
+2025-02-01 09:02:21,879 - INFO - epoch: 0.23881893182805036
+2025-02-01 09:04:32,826 - INFO - Training Step: 575
+2025-02-01 09:04:32,826 - INFO - loss: 0.5733
+2025-02-01 09:04:32,826 - INFO - grad_norm: 8.142950057983398
+2025-02-01 09:04:32,826 - INFO - learning_rate: 9.794285714285714e-06
+2025-02-01 09:04:32,826 - INFO - epoch: 0.2496743378202345
+2025-02-01 09:07:01,470 - INFO - Training Step: 600
+2025-02-01 09:07:01,471 - INFO - loss: 0.5528
+2025-02-01 09:07:01,471 - INFO - grad_norm: 10.090513229370117
+2025-02-01 09:07:01,471 - INFO - learning_rate: 9.722857142857143e-06
+2025-02-01 09:07:01,471 - INFO - epoch: 0.26052974381241856
+2025-02-01 09:09:15,792 - INFO - Training Step: 625
+2025-02-01 09:09:15,792 - INFO - loss: 0.5368
+2025-02-01 09:09:15,792 - INFO - grad_norm: 9.788369178771973
+2025-02-01 09:09:15,792 - INFO - learning_rate: 9.651428571428572e-06
+2025-02-01 09:09:15,792 - INFO - epoch: 0.2713851498046027
+2025-02-01 09:11:30,039 - INFO - Training Step: 650
+2025-02-01 09:11:30,040 - INFO - loss: 0.5
+2025-02-01 09:11:30,040 - INFO - grad_norm: 7.741598129272461
+2025-02-01 09:11:30,041 - INFO - learning_rate: 9.58e-06
+2025-02-01 09:11:30,041 - INFO - epoch: 0.2822405557967868
+2025-02-01 09:13:54,470 - INFO - Training Step: 675
+2025-02-01 09:13:54,471 - INFO - loss: 0.5105
+2025-02-01 09:13:54,471 - INFO - grad_norm: 8.779050827026367
+2025-02-01 09:13:54,471 - INFO - learning_rate: 9.508571428571429e-06
+2025-02-01 09:13:54,471 - INFO - epoch: 0.2930959617889709
+2025-02-01 09:16:10,883 - INFO - Training Step: 700
+2025-02-01 09:16:10,883 - INFO - loss: 0.5501
+2025-02-01 09:16:10,884 - INFO - grad_norm: 9.854972839355469
+2025-02-01 09:16:10,884 - INFO - learning_rate: 9.437142857142858e-06
+2025-02-01 09:16:10,884 - INFO - epoch: 0.303951367781155
+2025-02-01 09:18:24,409 - INFO - Training Step: 725
+2025-02-01 09:18:24,410 - INFO - loss: 0.505
+2025-02-01 09:18:24,410 - INFO - grad_norm: 8.470601081848145
+2025-02-01 09:18:24,410 - INFO - learning_rate: 9.365714285714287e-06
+2025-02-01 09:18:24,410 - INFO - epoch: 0.3148067737733391
+2025-02-01 09:20:38,615 - INFO - Training Step: 750
+2025-02-01 09:20:38,615 - INFO - loss: 0.5163
+2025-02-01 09:20:38,616 - INFO - grad_norm: 7.98384428024292
+2025-02-01 09:20:38,616 - INFO - learning_rate: 9.294285714285714e-06
+2025-02-01 09:20:38,616 - INFO - epoch: 0.32566217976552325
+2025-02-01 09:22:56,315 - INFO - Training Step: 775
+2025-02-01 09:22:56,315 - INFO - loss: 0.4817
+2025-02-01 09:22:56,316 - INFO - grad_norm: 7.298887729644775
+2025-02-01 09:22:56,316 - INFO - learning_rate: 9.222857142857143e-06
+2025-02-01 09:22:56,316 - INFO - epoch: 0.33651758575770735
+2025-02-01 09:25:07,469 - INFO - Training Step: 800
+2025-02-01 09:25:07,469 - INFO - loss: 0.4727
+2025-02-01 09:25:07,469 - INFO - grad_norm: 7.6725687980651855
+2025-02-01 09:25:07,469 - INFO - learning_rate: 9.151428571428572e-06
+2025-02-01 09:25:07,469 - INFO - epoch: 0.34737299174989145
+2025-02-01 09:27:34,622 - INFO - Training Step: 825
+2025-02-01 09:27:34,622 - INFO - loss: 0.4909
+2025-02-01 09:27:34,623 - INFO - grad_norm: 9.373476028442383
+2025-02-01 09:27:34,623 - INFO - learning_rate: 9.080000000000001e-06
+2025-02-01 09:27:34,623 - INFO - epoch: 0.35822839774207554
+2025-02-01 09:29:49,328 - INFO - Training Step: 850
+2025-02-01 09:29:49,328 - INFO - loss: 0.4678
+2025-02-01 09:29:49,329 - INFO - grad_norm: 7.883676052093506
+2025-02-01 09:29:49,329 - INFO - learning_rate: 9.00857142857143e-06
+2025-02-01 09:29:49,329 - INFO - epoch: 0.36908380373425964
+2025-02-01 09:32:09,421 - INFO - Training Step: 875
+2025-02-01 09:32:09,422 - INFO - loss: 0.4536
+2025-02-01 09:32:09,422 - INFO - grad_norm: 6.791653633117676
+2025-02-01 09:32:09,422 - INFO - learning_rate: 8.937142857142857e-06
+2025-02-01 09:32:09,422 - INFO - epoch: 0.3799392097264438
+2025-02-01 09:34:29,162 - INFO - Training Step: 900
+2025-02-01 09:34:29,163 - INFO - loss: 0.4756
+2025-02-01 09:34:29,164 - INFO - grad_norm: 7.05748987197876
+2025-02-01 09:34:29,164 - INFO - learning_rate: 8.865714285714287e-06
+2025-02-01 09:34:29,164 - INFO - epoch: 0.3907946157186279
+2025-02-01 09:36:43,327 - INFO - Training Step: 925
+2025-02-01 09:36:43,327 - INFO - loss: 0.4759
+2025-02-01 09:36:43,327 - INFO - grad_norm: 7.954599380493164
+2025-02-01 09:36:43,327 - INFO - learning_rate: 8.794285714285716e-06
+2025-02-01 09:36:43,327 - INFO - epoch: 0.401650021710812
+2025-02-01 09:38:57,374 - INFO - Training Step: 950
+2025-02-01 09:38:57,374 - INFO - loss: 0.4771
+2025-02-01 09:38:57,374 - INFO - grad_norm: 7.073688507080078
+2025-02-01 09:38:57,374 - INFO - learning_rate: 8.722857142857145e-06
+2025-02-01 09:38:57,374 - INFO - epoch: 0.4125054277029961
+2025-02-01 09:41:11,331 - INFO - Training Step: 975
+2025-02-01 09:41:11,331 - INFO - loss: 0.4586
+2025-02-01 09:41:11,332 - INFO - grad_norm: 7.365969657897949
+2025-02-01 09:41:11,332 - INFO - learning_rate: 8.651428571428572e-06
+2025-02-01 09:41:11,332 - INFO - epoch: 0.4233608336951802
+2025-02-01 09:43:37,796 - INFO - Training Step: 1000
+2025-02-01 09:43:37,797 - INFO - loss: 0.4791
+2025-02-01 09:43:37,797 - INFO - grad_norm: 7.258471965789795
+2025-02-01 09:43:37,797 - INFO - learning_rate: 8.580000000000001e-06
+2025-02-01 09:43:37,797 - INFO - epoch: 0.4342162396873643
+2025-02-01 10:52:26,026 - INFO - Training Step: 1000
+2025-02-01 10:52:26,026 - INFO - eval_loss: 0.5844622850418091
+2025-02-01 10:52:26,027 - INFO - eval_wer: 37.7508793709911
+2025-02-01 10:52:26,027 - INFO - eval_runtime: 4128.2268
+2025-02-01 10:52:26,027 - INFO - eval_samples_per_second: 2.48
+2025-02-01 10:52:26,027 - INFO - eval_steps_per_second: 0.31
+2025-02-01 10:52:26,027 - INFO - epoch: 0.4342162396873643
+2025-02-01 10:52:26,027 - INFO - 🔍 Evaluation Metrics:
+2025-02-01 10:52:26,027 - INFO - eval_loss: 0.5844622850418091
+2025-02-01 10:52:26,027 - INFO - eval_wer: 37.7508793709911
+2025-02-01 10:52:26,027 - INFO - eval_runtime: 4128.2268
+2025-02-01 10:52:26,027 - INFO - eval_samples_per_second: 2.48
+2025-02-01 10:52:26,027 - INFO - eval_steps_per_second: 0.31
+2025-02-01 10:52:26,027 - INFO - epoch: 0.4342162396873643
+2025-02-01 10:52:31,449 - INFO - 💾 Model checkpoint saved at step 1000.
+2025-02-01 10:54:48,777 - INFO - Training Step: 1025
+2025-02-01 10:54:48,778 - INFO - loss: 0.4414
+2025-02-01 10:54:48,778 - INFO - grad_norm: 7.444026470184326
+2025-02-01 10:54:48,778 - INFO - learning_rate: 8.50857142857143e-06
+2025-02-01 10:54:48,778 - INFO - epoch: 0.44507164567954843
+2025-02-01 10:57:16,081 - INFO - Training Step: 1050
+2025-02-01 10:57:16,081 - INFO - loss: 0.4456
+2025-02-01 10:57:16,081 - INFO - grad_norm: 8.03587818145752
+2025-02-01 10:57:16,081 - INFO - learning_rate: 8.437142857142859e-06
+2025-02-01 10:57:16,081 - INFO - epoch: 0.45592705167173253
+2025-02-01 10:59:38,380 - INFO - Training Step: 1075
+2025-02-01 10:59:38,381 - INFO - loss: 0.4581
+2025-02-01 10:59:38,381 - INFO - grad_norm: 8.84931468963623
+2025-02-01 10:59:38,381 - INFO - learning_rate: 8.365714285714286e-06
+2025-02-01 10:59:38,381 - INFO - epoch: 0.46678245766391663
+2025-02-01 11:01:48,314 - INFO - Training Step: 1100
+2025-02-01 11:01:48,314 - INFO - loss: 0.4337
+2025-02-01 11:01:48,314 - INFO - grad_norm: 8.68345832824707
+2025-02-01 11:01:48,314 - INFO - learning_rate: 8.294285714285715e-06
+2025-02-01 11:01:48,314 - INFO - epoch: 0.4776378636561007
+2025-02-01 11:04:11,098 - INFO - Training Step: 1125
+2025-02-01 11:04:11,098 - INFO - loss: 0.4494
+2025-02-01 11:04:11,098 - INFO - grad_norm: 8.488388061523438
+2025-02-01 11:04:11,098 - INFO - learning_rate: 8.222857142857144e-06
+2025-02-01 11:04:11,098 - INFO - epoch: 0.4884932696482848
+2025-02-01 11:06:26,652 - INFO - Training Step: 1150
+2025-02-01 11:06:26,653 - INFO - loss: 0.3668
+2025-02-01 11:06:26,653 - INFO - grad_norm: 7.710343837738037
+2025-02-01 11:06:26,653 - INFO - learning_rate: 8.151428571428572e-06
+2025-02-01 11:06:26,653 - INFO - epoch: 0.499348675640469
+2025-02-01 11:08:42,507 - INFO - Training Step: 1175
+2025-02-01 11:08:42,507 - INFO - loss: 0.4183
+2025-02-01 11:08:42,507 - INFO - grad_norm: 8.250182151794434
+2025-02-01 11:08:42,508 - INFO - learning_rate: 8.08e-06
+2025-02-01 11:08:42,508 - INFO - epoch: 0.5102040816326531
+2025-02-01 11:10:59,133 - INFO - Training Step: 1200
+2025-02-01 11:10:59,134 - INFO - loss: 0.4109
+2025-02-01 11:10:59,134 - INFO - grad_norm: 7.065091609954834
+2025-02-01 11:10:59,134 - INFO - learning_rate: 8.00857142857143e-06
+2025-02-01 11:10:59,134 - INFO - epoch: 0.5210594876248371
+2025-02-01 11:13:16,075 - INFO - Training Step: 1225
+2025-02-01 11:13:16,076 - INFO - loss: 0.454
+2025-02-01 11:13:16,076 - INFO - grad_norm: 8.657896041870117
+2025-02-01 11:13:16,077 - INFO - learning_rate: 7.937142857142857e-06
+2025-02-01 11:13:16,077 - INFO - epoch: 0.5319148936170213
+2025-02-01 11:15:35,876 - INFO - Training Step: 1250
+2025-02-01 11:15:35,876 - INFO - loss: 0.4128
+2025-02-01 11:15:35,876 - INFO - grad_norm: 8.186863899230957
+2025-02-01 11:15:35,876 - INFO - learning_rate: 7.865714285714286e-06
+2025-02-01 11:15:35,877 - INFO - epoch: 0.5427702996092054
+2025-02-01 11:17:52,436 - INFO - Training Step: 1275
+2025-02-01 11:17:52,436 - INFO - loss: 0.443
+2025-02-01 11:17:52,437 - INFO - grad_norm: 7.5097150802612305
+2025-02-01 11:17:52,437 - INFO - learning_rate: 7.794285714285715e-06
+2025-02-01 11:17:52,437 - INFO - epoch: 0.5536257056013895
+2025-02-01 11:20:16,924 - INFO - Training Step: 1300
+2025-02-01 11:20:16,924 - INFO - loss: 0.4044
+2025-02-01 11:20:16,924 - INFO - grad_norm: 6.4658660888671875
+2025-02-01 11:20:16,924 - INFO - learning_rate: 7.722857142857142e-06
+2025-02-01 11:20:16,924 - INFO - epoch: 0.5644811115935736
+2025-02-01 11:22:31,727 - INFO - Training Step: 1325
+2025-02-01 11:22:31,728 - INFO - loss: 0.4069
+2025-02-01 11:22:31,728 - INFO - grad_norm: 6.578035831451416
+2025-02-01 11:22:31,728 - INFO - learning_rate: 7.651428571428571e-06
+2025-02-01 11:22:31,728 - INFO - epoch: 0.5753365175857577
+2025-02-01 11:24:45,739 - INFO - Training Step: 1350
+2025-02-01 11:24:45,739 - INFO - loss: 0.4243
+2025-02-01 11:24:45,740 - INFO - grad_norm: 7.594754219055176
+2025-02-01 11:24:45,740 - INFO - learning_rate: 7.58e-06
+2025-02-01 11:24:45,740 - INFO - epoch: 0.5861919235779418
+2025-02-01 11:26:59,728 - INFO - Training Step: 1375
+2025-02-01 11:26:59,729 - INFO - loss: 0.4156
+2025-02-01 11:26:59,729 - INFO - grad_norm: 7.200682163238525
+2025-02-01 11:26:59,729 - INFO - learning_rate: 7.508571428571429e-06
+2025-02-01 11:26:59,729 - INFO - epoch: 0.597047329570126
+2025-02-01 11:29:22,765 - INFO - Training Step: 1400
+2025-02-01 11:29:22,765 - INFO - loss: 0.389
+2025-02-01 11:29:22,765 - INFO - grad_norm: 8.337480545043945
+2025-02-01 11:29:22,765 - INFO - learning_rate: 7.4371428571428575e-06
+2025-02-01 11:29:22,765 - INFO - epoch: 0.60790273556231
+2025-02-01 11:31:39,256 - INFO - Training Step: 1425
+2025-02-01 11:31:39,256 - INFO - loss: 0.3981
+2025-02-01 11:31:39,256 - INFO - grad_norm: 6.87963342666626
+2025-02-01 11:31:39,257 - INFO - learning_rate: 7.365714285714286e-06
+2025-02-01 11:31:39,257 - INFO - epoch: 0.6187581415544942
+2025-02-01 11:33:57,884 - INFO - Training Step: 1450
+2025-02-01 11:33:57,884 - INFO - loss: 0.3913
+2025-02-01 11:33:57,885 - INFO - grad_norm: 6.452853679656982
+2025-02-01 11:33:57,885 - INFO - learning_rate: 7.294285714285715e-06
+2025-02-01 11:33:57,885 - INFO - epoch: 0.6296135475466782
+2025-02-01 11:36:04,559 - INFO - Training Step: 1475
+2025-02-01 11:36:04,559 - INFO - loss: 0.396
+2025-02-01 11:36:04,559 - INFO - grad_norm: 8.22905158996582
+2025-02-01 11:36:04,559 - INFO - learning_rate: 7.222857142857144e-06
+2025-02-01 11:36:04,559 - INFO - epoch: 0.6404689535388624
+2025-02-01 11:38:35,122 - INFO - Training Step: 1500
+2025-02-01 11:38:35,123 - INFO - loss: 0.3931
+2025-02-01 11:38:35,123 - INFO - grad_norm: 7.372695446014404
+2025-02-01 11:38:35,123 - INFO - learning_rate: 7.151428571428573e-06
+2025-02-01 11:38:35,123 - INFO - epoch: 0.6513243595310465
+2025-02-01 11:40:43,141 - INFO - Training Step: 1525
+2025-02-01 11:40:43,141 - INFO - loss: 0.4077
+2025-02-01 11:40:43,142 - INFO - grad_norm: 5.696374893188477
+2025-02-01 11:40:43,142 - INFO - learning_rate: 7.08e-06
+2025-02-01 11:40:43,142 - INFO - epoch: 0.6621797655232305
+2025-02-01 11:42:59,479 - INFO - Training Step: 1550
+2025-02-01 11:42:59,479 - INFO - loss: 0.3988
+2025-02-01 11:42:59,479 - INFO - grad_norm: 9.451035499572754
+2025-02-01 11:42:59,479 - INFO - learning_rate: 7.008571428571429e-06
+2025-02-01 11:42:59,479 - INFO - epoch: 0.6730351715154147
+2025-02-01 11:45:10,927 - INFO - Training Step: 1575
+2025-02-01 11:45:10,928 - INFO - loss: 0.3913
+2025-02-01 11:45:10,928 - INFO - grad_norm: 7.3884596824646
+2025-02-01 11:45:10,928 - INFO - learning_rate: 6.937142857142858e-06
+2025-02-01 11:45:10,928 - INFO - epoch: 0.6838905775075987
+2025-02-01 11:47:28,292 - INFO - Training Step: 1600
+2025-02-01 11:47:28,293 - INFO - loss: 0.3879
+2025-02-01 11:47:28,293 - INFO - grad_norm: 4.940845966339111
+2025-02-01 11:47:28,293 - INFO - learning_rate: 6.865714285714287e-06
+2025-02-01 11:47:28,293 - INFO - epoch: 0.6947459834997829
+2025-02-01 11:49:45,567 - INFO - Training Step: 1625
+2025-02-01 11:49:45,568 - INFO - loss: 0.3663
+2025-02-01 11:49:45,568 - INFO - grad_norm: 5.960170745849609
+2025-02-01 11:49:45,568 - INFO - learning_rate: 6.794285714285714e-06
+2025-02-01 11:49:45,568 - INFO - epoch: 0.705601389491967
+2025-02-01 11:51:57,529 - INFO - Training Step: 1650
+2025-02-01 11:51:57,529 - INFO - loss: 0.3546
+2025-02-01 11:51:57,529 - INFO - grad_norm: 8.195878028869629
+2025-02-01 11:51:57,529 - INFO - learning_rate: 6.722857142857143e-06
+2025-02-01 11:51:57,530 - INFO - epoch: 0.7164567954841511
+2025-02-01 11:54:18,868 - INFO - Training Step: 1675
+2025-02-01 11:54:18,868 - INFO - loss: 0.3536
+2025-02-01 11:54:18,868 - INFO - grad_norm: 7.348960876464844
+2025-02-01 11:54:18,868 - INFO - learning_rate: 6.651428571428572e-06
+2025-02-01 11:54:18,868 - INFO - epoch: 0.7273122014763352
+2025-02-01 11:56:30,410 - INFO - Training Step: 1700
+2025-02-01 11:56:30,411 - INFO - loss: 0.3951
+2025-02-01 11:56:30,411 - INFO - grad_norm: 6.72292423248291
+2025-02-01 11:56:30,411 - INFO - learning_rate: 6.5800000000000005e-06
+2025-02-01 11:56:30,411 - INFO - epoch: 0.7381676074685193
+2025-02-01 11:58:44,468 - INFO - Training Step: 1725
+2025-02-01 11:58:44,468 - INFO - loss: 0.3738
+2025-02-01 11:58:44,468 - INFO - grad_norm: 5.774647235870361
+2025-02-01 11:58:44,468 - INFO - learning_rate: 6.5085714285714295e-06
+2025-02-01 11:58:44,468 - INFO - epoch: 0.7490230134607034
+2025-02-01 12:00:58,531 - INFO - Training Step: 1750
+2025-02-01 12:00:58,532 - INFO - loss: 0.3451
+2025-02-01 12:00:58,532 - INFO - grad_norm: 7.094516754150391
+2025-02-01 12:00:58,532 - INFO - learning_rate: 6.437142857142858e-06
+2025-02-01 12:00:58,532 - INFO - epoch: 0.7598784194528876
+2025-02-01 12:03:09,826 - INFO - Training Step: 1775
+2025-02-01 12:03:09,826 - INFO - loss: 0.3589
+2025-02-01 12:03:09,826 - INFO - grad_norm: 7.524207592010498
+2025-02-01 12:03:09,826 - INFO - learning_rate: 6.365714285714286e-06
+2025-02-01 12:03:09,826 - INFO - epoch: 0.7707338254450716
+2025-02-01 12:05:19,440 - INFO - Training Step: 1800
+2025-02-01 12:05:19,441 - INFO - loss: 0.3963
+2025-02-01 12:05:19,441 - INFO - grad_norm: 7.6046037673950195
+2025-02-01 12:05:19,441 - INFO - learning_rate: 6.294285714285715e-06
+2025-02-01 12:05:19,441 - INFO - epoch: 0.7815892314372558
+2025-02-01 12:07:30,434 - INFO - Training Step: 1825
+2025-02-01 12:07:30,434 - INFO - loss: 0.3595
+2025-02-01 12:07:30,435 - INFO - grad_norm: 7.269109725952148
+2025-02-01 12:07:30,435 - INFO - learning_rate: 6.222857142857144e-06
+2025-02-01 12:07:30,435 - INFO - epoch: 0.7924446374294398
+2025-02-01 12:09:45,250 - INFO - Training Step: 1850
+2025-02-01 12:09:45,250 - INFO - loss: 0.3517
+2025-02-01 12:09:45,250 - INFO - grad_norm: 8.7513427734375
+2025-02-01 12:09:45,250 - INFO - learning_rate: 6.151428571428571e-06
+2025-02-01 12:09:45,250 - INFO - epoch: 0.803300043421624
+2025-02-01 12:12:02,798 - INFO - Training Step: 1875
+2025-02-01 12:12:02,798 - INFO - loss: 0.3614
+2025-02-01 12:12:02,798 - INFO - grad_norm: 7.564099311828613
+2025-02-01 12:12:02,798 - INFO - learning_rate: 6.08e-06
+2025-02-01 12:12:02,798 - INFO - epoch: 0.8141554494138081
+2025-02-01 12:14:24,654 - INFO - Training Step: 1900
+2025-02-01 12:14:24,655 - INFO - loss: 0.3691
+2025-02-01 12:14:24,655 - INFO - grad_norm: 6.235879421234131
+2025-02-01 12:14:24,655 - INFO - learning_rate: 6.008571428571429e-06
+2025-02-01 12:14:24,655 - INFO - epoch: 0.8250108554059922
+2025-02-01 12:16:38,943 - INFO - Training Step: 1925
+2025-02-01 12:16:38,943 - INFO - loss: 0.3509
+2025-02-01 12:16:38,943 - INFO - grad_norm: 7.6708903312683105
+2025-02-01 12:16:38,943 - INFO - learning_rate: 5.937142857142858e-06
+2025-02-01 12:16:38,943 - INFO - epoch: 0.8358662613981763
+2025-02-01 12:19:02,353 - INFO - Training Step: 1950
+2025-02-01 12:19:02,354 - INFO - loss: 0.3379
+2025-02-01 12:19:02,354 - INFO - grad_norm: 5.580029487609863
+2025-02-01 12:19:02,354 - INFO - learning_rate: 5.865714285714286e-06
+2025-02-01 12:19:02,354 - INFO - epoch: 0.8467216673903604
+2025-02-01 12:21:33,959 - INFO - Training Step: 1975
+2025-02-01 12:21:33,959 - INFO - loss: 0.3188
+2025-02-01 12:21:33,960 - INFO - grad_norm: 6.047791957855225
+2025-02-01 12:21:33,960 - INFO - learning_rate: 5.794285714285715e-06
+2025-02-01 12:21:33,960 - INFO - epoch: 0.8575770733825445
+2025-02-01 12:23:58,990 - INFO - Training Step: 2000
+2025-02-01 12:23:58,990 - INFO - loss: 0.3981
+2025-02-01 12:23:58,990 - INFO - grad_norm: 6.016073703765869
+2025-02-01 12:23:58,990 - INFO - learning_rate: 5.722857142857144e-06
+2025-02-01 12:23:58,990 - INFO - epoch: 0.8684324793747286
+2025-02-01 13:32:27,607 - INFO - Training Step: 2000
+2025-02-01 13:32:27,607 - INFO - eval_loss: 0.48441991209983826
+2025-02-01 13:32:27,607 - INFO - eval_wer: 32.01600110352438
+2025-02-01 13:32:27,607 - INFO - eval_runtime: 4108.6129
+2025-02-01 13:32:27,607 - INFO - eval_samples_per_second: 2.492
+2025-02-01 13:32:27,607 - INFO - eval_steps_per_second: 0.312
+2025-02-01 13:32:27,607 - INFO - epoch: 0.8684324793747286
+2025-02-01 13:32:27,607 - INFO - 🔍 Evaluation Metrics:
+2025-02-01 13:32:27,607 - INFO - eval_loss: 0.48441991209983826
+2025-02-01 13:32:27,607 - INFO - eval_wer: 32.01600110352438
+2025-02-01 13:32:27,607 - INFO - eval_runtime: 4108.6129
+2025-02-01 13:32:27,607 - INFO - eval_samples_per_second: 2.492
+2025-02-01 13:32:27,607 - INFO - eval_steps_per_second: 0.312
+2025-02-01 13:32:27,607 - INFO - epoch: 0.8684324793747286
+2025-02-01 13:32:31,766 - INFO - 💾 Model checkpoint saved at step 2000.
+2025-02-01 13:34:38,117 - INFO - Training Step: 2025
+2025-02-01 13:34:38,118 - INFO - loss: 0.3629
+2025-02-01 13:34:38,118 - INFO - grad_norm: 8.266932487487793
+2025-02-01 13:34:38,118 - INFO - learning_rate: 5.651428571428572e-06
+2025-02-01 13:34:38,118 - INFO - epoch: 0.8792878853669127
+2025-02-01 13:37:02,025 - INFO - Training Step: 2050
+2025-02-01 13:37:02,025 - INFO - loss: 0.3211
+2025-02-01 13:37:02,025 - INFO - grad_norm: 5.027731895446777
+2025-02-01 13:37:02,026 - INFO - learning_rate: 5.580000000000001e-06
+2025-02-01 13:37:02,026 - INFO - epoch: 0.8901432913590969
+2025-02-01 13:39:19,960 - INFO - Training Step: 2075
+2025-02-01 13:39:19,960 - INFO - loss: 0.3403
+2025-02-01 13:39:19,960 - INFO - grad_norm: 7.097695350646973
+2025-02-01 13:39:19,960 - INFO - learning_rate: 5.508571428571429e-06
+2025-02-01 13:39:19,960 - INFO - epoch: 0.9009986973512809
+2025-02-01 13:41:37,238 - INFO - Training Step: 2100
+2025-02-01 13:41:37,239 - INFO - loss: 0.3543
+2025-02-01 13:41:37,239 - INFO - grad_norm: 4.704562664031982
+2025-02-01 13:41:37,239 - INFO - learning_rate: 5.437142857142857e-06
+2025-02-01 13:41:37,239 - INFO - epoch: 0.9118541033434651
+2025-02-01 13:43:48,676 - INFO - Training Step: 2125
+2025-02-01 13:43:48,677 - INFO - loss: 0.3475
+2025-02-01 13:43:48,677 - INFO - grad_norm: 6.580053329467773
+2025-02-01 13:43:48,677 - INFO - learning_rate: 5.365714285714286e-06
+2025-02-01 13:43:48,677 - INFO - epoch: 0.9227095093356491
+2025-02-01 13:46:08,111 - INFO - Training Step: 2150
+2025-02-01 13:46:08,111 - INFO - loss: 0.3735
+2025-02-01 13:46:08,112 - INFO - grad_norm: 5.354591369628906
+2025-02-01 13:46:08,112 - INFO - learning_rate: 5.294285714285715e-06
+2025-02-01 13:46:08,112 - INFO - epoch: 0.9335649153278333
+2025-02-01 13:48:24,542 - INFO - Training Step: 2175
+2025-02-01 13:48:24,543 - INFO - loss: 0.3604
+2025-02-01 13:48:24,543 - INFO - grad_norm: 7.915386199951172
+2025-02-01 13:48:24,543 - INFO - learning_rate: 5.2228571428571425e-06
+2025-02-01 13:48:24,543 - INFO - epoch: 0.9444203213200174
+2025-02-01 13:50:38,879 - INFO - Training Step: 2200
+2025-02-01 13:50:38,879 - INFO - loss: 0.365
+2025-02-01 13:50:38,880 - INFO - grad_norm: 6.834216117858887
+2025-02-01 13:50:38,880 - INFO - learning_rate: 5.1514285714285715e-06
+2025-02-01 13:50:38,880 - INFO - epoch: 0.9552757273122015
+2025-02-01 13:52:53,444 - INFO - Training Step: 2225
+2025-02-01 13:52:53,444 - INFO - loss: 0.3339
+2025-02-01 13:52:53,445 - INFO - grad_norm: 6.17089319229126
+2025-02-01 13:52:53,445 - INFO - learning_rate: 5.0800000000000005e-06
+2025-02-01 13:52:53,445 - INFO - epoch: 0.9661311333043856
+2025-02-01 13:55:13,682 - INFO - Training Step: 2250
+2025-02-01 13:55:13,682 - INFO - loss: 0.357
+2025-02-01 13:55:13,683 - INFO - grad_norm: 6.42146110534668
+2025-02-01 13:55:13,683 - INFO - learning_rate: 5.0085714285714295e-06
+2025-02-01 13:55:13,683 - INFO - epoch: 0.9769865392965696
+2025-02-01 13:57:29,854 - INFO - Training Step: 2275
+2025-02-01 13:57:29,854 - INFO - loss: 0.3476
+2025-02-01 13:57:29,854 - INFO - grad_norm: 6.982667922973633
+2025-02-01 13:57:29,854 - INFO - learning_rate: 4.937142857142858e-06
+2025-02-01 13:57:29,855 - INFO - epoch: 0.9878419452887538
+2025-02-01 13:59:59,866 - INFO - Training Step: 2300
+2025-02-01 13:59:59,866 - INFO - loss: 0.3502
+2025-02-01 13:59:59,867 - INFO - grad_norm: 5.507518291473389
+2025-02-01 13:59:59,867 - INFO - learning_rate: 4.865714285714287e-06
+2025-02-01 13:59:59,867 - INFO - epoch: 0.998697351280938
+2025-02-01 14:00:16,448 - INFO - 🚀 Epoch 1.0 completed.
+2025-02-01 14:02:11,491 - INFO - Training Step: 2325
+2025-02-01 14:02:11,492 - INFO - loss: 0.2636
+2025-02-01 14:02:11,492 - INFO - grad_norm: 4.36088752746582
+2025-02-01 14:02:11,492 - INFO - learning_rate: 4.794285714285715e-06
+2025-02-01 14:02:11,492 - INFO - epoch: 1.009552757273122
+2025-02-01 14:04:36,536 - INFO - Training Step: 2350
+2025-02-01 14:04:36,536 - INFO - loss: 0.229
+2025-02-01 14:04:36,536 - INFO - grad_norm: 4.360809803009033
+2025-02-01 14:04:36,536 - INFO - learning_rate: 4.722857142857144e-06
+2025-02-01 14:04:36,536 - INFO - epoch: 1.0204081632653061
+2025-02-01 14:06:47,835 - INFO - Training Step: 2375
+2025-02-01 14:06:47,836 - INFO - loss: 0.2159
+2025-02-01 14:06:47,836 - INFO - grad_norm: 5.155508518218994
+2025-02-01 14:06:47,836 - INFO - learning_rate: 4.651428571428572e-06
+2025-02-01 14:06:47,836 - INFO - epoch: 1.0312635692574903
+2025-02-01 14:09:02,253 - INFO - Training Step: 2400
+2025-02-01 14:09:02,253 - INFO - loss: 0.2423
+2025-02-01 14:09:02,254 - INFO - grad_norm: 6.344543933868408
+2025-02-01 14:09:02,254 - INFO - learning_rate: 4.58e-06
+2025-02-01 14:09:02,254 - INFO - epoch: 1.0421189752496742
+2025-02-01 14:11:19,533 - INFO - Training Step: 2425
+2025-02-01 14:11:19,533 - INFO - loss: 0.2515
+2025-02-01 14:11:19,533 - INFO - grad_norm: 4.905534744262695
+2025-02-01 14:11:19,534 - INFO - learning_rate: 4.508571428571429e-06
+2025-02-01 14:11:19,534 - INFO - epoch: 1.0529743812418584
+2025-02-01 14:13:26,081 - INFO - Training Step: 2450
+2025-02-01 14:13:26,082 - INFO - loss: 0.2502
+2025-02-01 14:13:26,082 - INFO - grad_norm: 6.555382251739502
+2025-02-01 14:13:26,082 - INFO - learning_rate: 4.437142857142857e-06
+2025-02-01 14:13:26,082 - INFO - epoch: 1.0638297872340425
+2025-02-01 14:15:49,875 - INFO - Training Step: 2475
+2025-02-01 14:15:49,876 - INFO - loss: 0.252
+2025-02-01 14:15:49,876 - INFO - grad_norm: 6.366801738739014
+2025-02-01 14:15:49,876 - INFO - learning_rate: 4.3657142857142855e-06
+2025-02-01 14:15:49,876 - INFO - epoch: 1.0746851932262267
+2025-02-01 14:18:07,316 - INFO - Training Step: 2500
+2025-02-01 14:18:07,317 - INFO - loss: 0.2121
+2025-02-01 14:18:07,317 - INFO - grad_norm: 6.07490873336792
+2025-02-01 14:18:07,317 - INFO - learning_rate: 4.2942857142857146e-06
+2025-02-01 14:18:07,317 - INFO - epoch: 1.0855405992184108
+2025-02-01 14:20:18,450 - INFO - Training Step: 2525
+2025-02-01 14:20:18,450 - INFO - loss: 0.2676
+2025-02-01 14:20:18,450 - INFO - grad_norm: 4.780932903289795
+2025-02-01 14:20:18,450 - INFO - learning_rate: 4.222857142857143e-06
+2025-02-01 14:20:18,450 - INFO - epoch: 1.096396005210595
+2025-02-01 14:22:35,820 - INFO - Training Step: 2550
+2025-02-01 14:22:35,820 - INFO - loss: 0.2399
+2025-02-01 14:22:35,820 - INFO - grad_norm: 5.087337493896484
+2025-02-01 14:22:35,821 - INFO - learning_rate: 4.151428571428572e-06
+2025-02-01 14:22:35,821 - INFO - epoch: 1.107251411202779
+2025-02-01 14:24:49,714 - INFO - Training Step: 2575
+2025-02-01 14:24:49,715 - INFO - loss: 0.2395
+2025-02-01 14:24:49,715 - INFO - grad_norm: 4.743577480316162
+2025-02-01 14:24:49,715 - INFO - learning_rate: 4.08e-06
+2025-02-01 14:24:49,715 - INFO - epoch: 1.118106817194963
+2025-02-01 14:27:21,907 - INFO - Training Step: 2600
+2025-02-01 14:27:21,908 - INFO - loss: 0.2133
+2025-02-01 14:27:21,908 - INFO - grad_norm: 4.944760322570801
+2025-02-01 14:27:21,908 - INFO - learning_rate: 4.008571428571429e-06
+2025-02-01 14:27:21,908 - INFO - epoch: 1.1289622231871472
+2025-02-01 14:29:38,791 - INFO - Training Step: 2625
+2025-02-01 14:29:38,791 - INFO - loss: 0.2447
+2025-02-01 14:29:38,791 - INFO - grad_norm: 5.741362571716309
+2025-02-01 14:29:38,791 - INFO - learning_rate: 3.937142857142858e-06
+2025-02-01 14:29:38,791 - INFO - epoch: 1.1398176291793314
+2025-02-01 14:31:52,003 - INFO - Training Step: 2650
+2025-02-01 14:31:52,003 - INFO - loss: 0.2435
+2025-02-01 14:31:52,003 - INFO - grad_norm: 6.91702127456665
+2025-02-01 14:31:52,003 - INFO - learning_rate: 3.865714285714286e-06
+2025-02-01 14:31:52,003 - INFO - epoch: 1.1506730351715153
+2025-02-01 14:34:11,178 - INFO - Training Step: 2675
+2025-02-01 14:34:11,178 - INFO - loss: 0.2291
+2025-02-01 14:34:11,179 - INFO - grad_norm: 4.720295429229736
+2025-02-01 14:34:11,179 - INFO - learning_rate: 3.7942857142857147e-06
+2025-02-01 14:34:11,179 - INFO - epoch: 1.1615284411636995
+2025-02-01 14:36:28,493 - INFO - Training Step: 2700
+2025-02-01 14:36:28,493 - INFO - loss: 0.2232
+2025-02-01 14:36:28,493 - INFO - grad_norm: 5.744699001312256
+2025-02-01 14:36:28,493 - INFO - learning_rate: 3.722857142857143e-06
+2025-02-01 14:36:28,493 - INFO - epoch: 1.1723838471558836
+2025-02-01 14:38:53,478 - INFO - Training Step: 2725
+2025-02-01 14:38:53,478 - INFO - loss: 0.2432
+2025-02-01 14:38:53,478 - INFO - grad_norm: 6.698773384094238
+2025-02-01 14:38:53,478 - INFO - learning_rate: 3.651428571428572e-06
+2025-02-01 14:38:53,478 - INFO - epoch: 1.1832392531480678
+2025-02-01 14:41:13,441 - INFO - Training Step: 2750
+2025-02-01 14:41:13,441 - INFO - loss: 0.2401
+2025-02-01 14:41:13,441 - INFO - grad_norm: 6.197906970977783
+2025-02-01 14:41:13,441 - INFO - learning_rate: 3.58e-06
+2025-02-01 14:41:13,441 - INFO - epoch: 1.194094659140252
+2025-02-01 14:43:30,982 - INFO - Training Step: 2775
+2025-02-01 14:43:30,983 - INFO - loss: 0.2522
+2025-02-01 14:43:30,983 - INFO - grad_norm: 4.979564189910889
+2025-02-01 14:43:30,983 - INFO - learning_rate: 3.508571428571429e-06
+2025-02-01 14:43:30,983 - INFO - epoch: 1.204950065132436
+2025-02-01 14:45:41,044 - INFO - Training Step: 2800
+2025-02-01 14:45:41,044 - INFO - loss: 0.2449
+2025-02-01 14:45:41,044 - INFO - grad_norm: 6.126119136810303
+2025-02-01 14:45:41,044 - INFO - learning_rate: 3.437142857142857e-06
+2025-02-01 14:45:41,045 - INFO - epoch: 1.21580547112462
+2025-02-01 14:47:53,836 - INFO - Training Step: 2825
+2025-02-01 14:47:53,837 - INFO - loss: 0.2259
+2025-02-01 14:47:53,837 - INFO - grad_norm: 4.405512809753418
+2025-02-01 14:47:53,837 - INFO - learning_rate: 3.3657142857142862e-06
+2025-02-01 14:47:53,837 - INFO - epoch: 1.2266608771168042
+2025-02-01 14:50:16,859 - INFO - Training Step: 2850
+2025-02-01 14:50:16,859 - INFO - loss: 0.25
+2025-02-01 14:50:16,859 - INFO - grad_norm: 5.583841800689697
+2025-02-01 14:50:16,859 - INFO - learning_rate: 3.2942857142857144e-06
+2025-02-01 14:50:16,859 - INFO - epoch: 1.2375162831089883
+2025-02-01 14:52:36,179 - INFO - Training Step: 2875
+2025-02-01 14:52:36,180 - INFO - loss: 0.2454
+2025-02-01 14:52:36,180 - INFO - grad_norm: 5.532050132751465
+2025-02-01 14:52:36,180 - INFO - learning_rate: 3.222857142857143e-06
+2025-02-01 14:52:36,180 - INFO - epoch: 1.2483716891011725
+2025-02-01 14:54:43,592 - INFO - Training Step: 2900
+2025-02-01 14:54:43,592 - INFO - loss: 0.2319
+2025-02-01 14:54:43,593 - INFO - grad_norm: 5.601458549499512
+2025-02-01 14:54:43,593 - INFO - learning_rate: 3.151428571428572e-06
+2025-02-01 14:54:43,593 - INFO - epoch: 1.2592270950933564
+2025-02-01 14:57:02,780 - INFO - Training Step: 2925
+2025-02-01 14:57:02,781 - INFO - loss: 0.2272
+2025-02-01 14:57:02,781 - INFO - grad_norm: 5.939492702484131
+2025-02-01 14:57:02,781 - INFO - learning_rate: 3.08e-06
+2025-02-01 14:57:02,781 - INFO - epoch: 1.2700825010855405
+2025-02-01 14:59:13,600 - INFO - Training Step: 2950
+2025-02-01 14:59:13,601 - INFO - loss: 0.2219
+2025-02-01 14:59:13,602 - INFO - grad_norm: 4.951872825622559
+2025-02-01 14:59:13,602 - INFO - learning_rate: 3.008571428571429e-06
+2025-02-01 14:59:13,602 - INFO - epoch: 1.2809379070777247
+2025-02-01 15:01:30,827 - INFO - Training Step: 2975
+2025-02-01 15:01:30,827 - INFO - loss: 0.2248
+2025-02-01 15:01:30,827 - INFO - grad_norm: 5.511277675628662
+2025-02-01 15:01:30,827 - INFO - learning_rate: 2.9371428571428573e-06
+2025-02-01 15:01:30,827 - INFO - epoch: 1.2917933130699089
+2025-02-01 15:04:01,252 - INFO - Training Step: 3000
+2025-02-01 15:04:01,252 - INFO - loss: 0.235
+2025-02-01 15:04:01,252 - INFO - grad_norm: 5.593256950378418
+2025-02-01 15:04:01,252 - INFO - learning_rate: 2.865714285714286e-06
+2025-02-01 15:04:01,252 - INFO - epoch: 1.302648719062093
+2025-02-01 16:12:47,868 - INFO - Training Step: 3000
+2025-02-01 16:12:47,868 - INFO - eval_loss: 0.46550479531288147
+2025-02-01 16:12:47,868 - INFO - eval_wer: 31.158470699128678
+2025-02-01 16:12:47,868 - INFO - eval_runtime: 4126.6132
+2025-02-01 16:12:47,868 - INFO - eval_samples_per_second: 2.481
+2025-02-01 16:12:47,868 - INFO - eval_steps_per_second: 0.31
+2025-02-01 16:12:47,868 - INFO - epoch: 1.302648719062093
+2025-02-01 16:12:47,868 - INFO - 🔍 Evaluation Metrics:
+2025-02-01 16:12:47,868 - INFO - eval_loss: 0.46550479531288147
+2025-02-01 16:12:47,868 - INFO - eval_wer: 31.158470699128678
+2025-02-01 16:12:47,868 - INFO - eval_runtime: 4126.6132
+2025-02-01 16:12:47,868 - INFO - eval_samples_per_second: 2.481
+2025-02-01 16:12:47,868 - INFO - eval_steps_per_second: 0.31
+2025-02-01 16:12:47,868 - INFO - epoch: 1.302648719062093
+2025-02-01 16:12:52,072 - INFO - 💾 Model checkpoint saved at step 3000.
+2025-02-01 16:15:09,288 - INFO - Training Step: 3025
+2025-02-01 16:15:09,288 - INFO - loss: 0.2188
+2025-02-01 16:15:09,288 - INFO - grad_norm: 5.128869533538818
+2025-02-01 16:15:09,288 - INFO - learning_rate: 2.7942857142857145e-06
+2025-02-01 16:15:09,289 - INFO - epoch: 1.3135041250542772
+2025-02-01 16:17:19,667 - INFO - Training Step: 3050
+2025-02-01 16:17:19,667 - INFO - loss: 0.2369
+2025-02-01 16:17:19,667 - INFO - grad_norm: 5.1727776527404785
+2025-02-01 16:17:19,667 - INFO - learning_rate: 2.722857142857143e-06
+2025-02-01 16:17:19,667 - INFO - epoch: 1.324359531046461
+2025-02-01 16:19:37,258 - INFO - Training Step: 3075
+2025-02-01 16:19:37,259 - INFO - loss: 0.2387
+2025-02-01 16:19:37,259 - INFO - grad_norm: 5.012162208557129
+2025-02-01 16:19:37,259 - INFO - learning_rate: 2.6514285714285713e-06
+2025-02-01 16:19:37,259 - INFO - epoch: 1.3352149370386452
+2025-02-01 16:21:50,510 - INFO - Training Step: 3100
+2025-02-01 16:21:50,510 - INFO - loss: 0.2065
+2025-02-01 16:21:50,511 - INFO - grad_norm: 6.836491107940674
+2025-02-01 16:21:50,511 - INFO - learning_rate: 2.5800000000000003e-06
+2025-02-01 16:21:50,511 - INFO - epoch: 1.3460703430308294
+2025-02-01 16:24:09,731 - INFO - Training Step: 3125
+2025-02-01 16:24:09,731 - INFO - loss: 0.2346
+2025-02-01 16:24:09,732 - INFO - grad_norm: 4.365079879760742
+2025-02-01 16:24:09,732 - INFO - learning_rate: 2.5085714285714285e-06
+2025-02-01 16:24:09,732 - INFO - epoch: 1.3569257490230133
+2025-02-01 16:26:35,570 - INFO - Training Step: 3150
+2025-02-01 16:26:35,571 - INFO - loss: 0.2263
+2025-02-01 16:26:35,571 - INFO - grad_norm: 6.802778244018555
+2025-02-01 16:26:35,571 - INFO - learning_rate: 2.4371428571428575e-06
+2025-02-01 16:26:35,571 - INFO - epoch: 1.3677811550151975
+2025-02-01 16:28:59,978 - INFO - Training Step: 3175
+2025-02-01 16:28:59,978 - INFO - loss: 0.2408
+2025-02-01 16:28:59,978 - INFO - grad_norm: 4.862367153167725
+2025-02-01 16:28:59,978 - INFO - learning_rate: 2.365714285714286e-06
+2025-02-01 16:28:59,978 - INFO - epoch: 1.3786365610073816
+2025-02-01 16:31:10,730 - INFO - Training Step: 3200
+2025-02-01 16:31:10,730 - INFO - loss: 0.2091
+2025-02-01 16:31:10,730 - INFO - grad_norm: 5.278151512145996
+2025-02-01 16:31:10,731 - INFO - learning_rate: 2.2942857142857146e-06
+2025-02-01 16:31:10,731 - INFO - epoch: 1.3894919669995658
+2025-02-01 16:33:27,562 - INFO - Training Step: 3225
+2025-02-01 16:33:27,563 - INFO - loss: 0.2116
+2025-02-01 16:33:27,563 - INFO - grad_norm: 5.090943336486816
+2025-02-01 16:33:27,563 - INFO - learning_rate: 2.222857142857143e-06
+2025-02-01 16:33:27,564 - INFO - epoch: 1.40034737299175
+2025-02-01 16:35:47,356 - INFO - Training Step: 3250
+2025-02-01 16:35:47,356 - INFO - loss: 0.2204
+2025-02-01 16:35:47,356 - INFO - grad_norm: 5.269351482391357
+2025-02-01 16:35:47,356 - INFO - learning_rate: 2.1514285714285714e-06
+2025-02-01 16:35:47,357 - INFO - epoch: 1.411202778983934
+2025-02-01 16:38:03,140 - INFO - Training Step: 3275
+2025-02-01 16:38:03,140 - INFO - loss: 0.2337
+2025-02-01 16:38:03,141 - INFO - grad_norm: 4.648277282714844
+2025-02-01 16:38:03,141 - INFO - learning_rate: 2.08e-06
+2025-02-01 16:38:03,141 - INFO - epoch: 1.4220581849761182
+2025-02-01 16:40:23,413 - INFO - Training Step: 3300
+2025-02-01 16:40:23,413 - INFO - loss: 0.2337
+2025-02-01 16:40:23,413 - INFO - grad_norm: 4.978538513183594
+2025-02-01 16:40:23,413 - INFO - learning_rate: 2.0085714285714286e-06
+2025-02-01 16:40:23,413 - INFO - epoch: 1.4329135909683022
+2025-02-01 16:42:36,419 - INFO - Training Step: 3325
+2025-02-01 16:42:36,420 - INFO - loss: 0.2234
+2025-02-01 16:42:36,420 - INFO - grad_norm: 6.761682987213135
+2025-02-01 16:42:36,420 - INFO - learning_rate: 1.9371428571428576e-06
+2025-02-01 16:42:36,420 - INFO - epoch: 1.4437689969604863
+2025-02-01 16:44:52,893 - INFO - Training Step: 3350
+2025-02-01 16:44:52,893 - INFO - loss: 0.2276
+2025-02-01 16:44:52,893 - INFO - grad_norm: 5.192492485046387
+2025-02-01 16:44:52,893 - INFO - learning_rate: 1.865714285714286e-06
+2025-02-01 16:44:52,893 - INFO - epoch: 1.4546244029526705
+2025-02-01 16:47:01,853 - INFO - Training Step: 3375
+2025-02-01 16:47:01,853 - INFO - loss: 0.2288
+2025-02-01 16:47:01,854 - INFO - grad_norm: 5.977624416351318
+2025-02-01 16:47:01,854 - INFO - learning_rate: 1.7942857142857146e-06
+2025-02-01 16:47:01,854 - INFO - epoch: 1.4654798089448544
+2025-02-01 16:49:23,122 - INFO - Training Step: 3400
+2025-02-01 16:49:23,123 - INFO - loss: 0.2444
+2025-02-01 16:49:23,123 - INFO - grad_norm: 4.869466781616211
+2025-02-01 16:49:23,123 - INFO - learning_rate: 1.7228571428571432e-06
+2025-02-01 16:49:23,123 - INFO - epoch: 1.4763352149370386
+2025-02-01 16:51:29,254 - INFO - Training Step: 3425
+2025-02-01 16:51:29,254 - INFO - loss: 0.2132
+2025-02-01 16:51:29,254 - INFO - grad_norm: 3.8427367210388184
+2025-02-01 16:51:29,254 - INFO - learning_rate: 1.6514285714285715e-06
+2025-02-01 16:51:29,254 - INFO - epoch: 1.4871906209292227
+2025-02-01 16:53:45,847 - INFO - Training Step: 3450
+2025-02-01 16:53:45,848 - INFO - loss: 0.2254
+2025-02-01 16:53:45,848 - INFO - grad_norm: 5.505527973175049
+2025-02-01 16:53:45,848 - INFO - learning_rate: 1.5800000000000001e-06
+2025-02-01 16:53:45,848 - INFO - epoch: 1.4980460269214069
+2025-02-01 16:55:56,789 - INFO - Training Step: 3475
+2025-02-01 16:55:56,789 - INFO - loss: 0.1957
+2025-02-01 16:55:56,790 - INFO - grad_norm: 5.351711273193359
+2025-02-01 16:55:56,790 - INFO - learning_rate: 1.5085714285714287e-06
+2025-02-01 16:55:56,790 - INFO - epoch: 1.508901432913591
+2025-02-01 16:58:15,573 - INFO - Training Step: 3500
+2025-02-01 16:58:15,573 - INFO - loss: 0.2224
+2025-02-01 16:58:15,573 - INFO - grad_norm: 6.376964569091797
+2025-02-01 16:58:15,573 - INFO - learning_rate: 1.4371428571428573e-06
+2025-02-01 16:58:15,574 - INFO - epoch: 1.5197568389057752
+2025-02-01 17:00:47,032 - INFO - Training Step: 3525
+2025-02-01 17:00:47,032 - INFO - loss: 0.2238
+2025-02-01 17:00:47,032 - INFO - grad_norm: 5.676926612854004
+2025-02-01 17:00:47,032 - INFO - learning_rate: 1.3657142857142857e-06
+2025-02-01 17:00:47,032 - INFO - epoch: 1.5306122448979593
+2025-02-01 17:03:04,451 - INFO - Training Step: 3550
+2025-02-01 17:03:04,452 - INFO - loss: 0.2058
+2025-02-01 17:03:04,452 - INFO - grad_norm: 4.052835941314697
+2025-02-01 17:03:04,452 - INFO - learning_rate: 1.2942857142857143e-06
+2025-02-01 17:03:04,452 - INFO - epoch: 1.5414676508901433
+2025-02-01 17:05:27,350 - INFO - Training Step: 3575
+2025-02-01 17:05:27,351 - INFO - loss: 0.2262
+2025-02-01 17:05:27,351 - INFO - grad_norm: 7.003936290740967
+2025-02-01 17:05:27,351 - INFO - learning_rate: 1.222857142857143e-06
+2025-02-01 17:05:27,351 - INFO - epoch: 1.5523230568823274
+2025-02-01 17:07:38,380 - INFO - Training Step: 3600
+2025-02-01 17:07:38,381 - INFO - loss: 0.2167
+2025-02-01 17:07:38,381 - INFO - grad_norm: 6.144070148468018
+2025-02-01 17:07:38,381 - INFO - learning_rate: 1.1514285714285714e-06
+2025-02-01 17:07:38,381 - INFO - epoch: 1.5631784628745113
+2025-02-01 17:09:50,987 - INFO - Training Step: 3625
+2025-02-01 17:09:50,988 - INFO - loss: 0.2088
+2025-02-01 17:09:50,988 - INFO - grad_norm: 4.226051330566406
+2025-02-01 17:09:50,988 - INFO - learning_rate: 1.08e-06
+2025-02-01 17:09:50,988 - INFO - epoch: 1.5740338688666955
+2025-02-01 17:12:04,556 - INFO - Training Step: 3650
+2025-02-01 17:12:04,556 - INFO - loss: 0.242
+2025-02-01 17:12:04,556 - INFO - grad_norm: 7.081725120544434
+2025-02-01 17:12:04,556 - INFO - learning_rate: 1.0085714285714286e-06
+2025-02-01 17:12:04,556 - INFO - epoch: 1.5848892748588796
+2025-02-01 17:14:10,796 - INFO - Training Step: 3675
+2025-02-01 17:14:10,797 - INFO - loss: 0.2125
+2025-02-01 17:14:10,797 - INFO - grad_norm: 5.653698921203613
+2025-02-01 17:14:10,797 - INFO - learning_rate: 9.371428571428571e-07
+2025-02-01 17:14:10,797 - INFO - epoch: 1.5957446808510638
+2025-02-01 17:16:24,797 - INFO - Training Step: 3700
+2025-02-01 17:16:24,798 - INFO - loss: 0.2126
+2025-02-01 17:16:24,799 - INFO - grad_norm: 5.323894023895264
+2025-02-01 17:16:24,799 - INFO - learning_rate: 8.657142857142858e-07
+2025-02-01 17:16:24,799 - INFO - epoch: 1.606600086843248
+2025-02-01 17:18:37,366 - INFO - Training Step: 3725
+2025-02-01 17:18:37,366 - INFO - loss: 0.2132
+2025-02-01 17:18:37,366 - INFO - grad_norm: 6.67328405380249
+2025-02-01 17:18:37,366 - INFO - learning_rate: 7.942857142857144e-07
+2025-02-01 17:18:37,367 - INFO - epoch: 1.617455492835432
+2025-02-01 17:20:45,309 - INFO - Training Step: 3750
+2025-02-01 17:20:45,309 - INFO - loss: 0.2213
+2025-02-01 17:20:45,309 - INFO - grad_norm: 4.567593574523926
+2025-02-01 17:20:45,309 - INFO - learning_rate: 7.228571428571429e-07
+2025-02-01 17:20:45,310 - INFO - epoch: 1.6283108988276163
+2025-02-01 17:22:56,110 - INFO - Training Step: 3775
+2025-02-01 17:22:56,110 - INFO - loss: 0.1998
+2025-02-01 17:22:56,110 - INFO - grad_norm: 4.67458438873291
+2025-02-01 17:22:56,111 - INFO - learning_rate: 6.514285714285715e-07
+2025-02-01 17:22:56,111 - INFO - epoch: 1.6391663048198004
+2025-02-01 17:25:12,681 - INFO - Training Step: 3800
+2025-02-01 17:25:12,681 - INFO - loss: 0.2221
+2025-02-01 17:25:12,682 - INFO - grad_norm: 6.721928596496582
+2025-02-01 17:25:12,682 - INFO - learning_rate: 5.800000000000001e-07
+2025-02-01 17:25:12,682 - INFO - epoch: 1.6500217108119843
+2025-02-01 17:27:32,644 - INFO - Training Step: 3825
+2025-02-01 17:27:32,644 - INFO - loss: 0.2123
+2025-02-01 17:27:32,645 - INFO - grad_norm: 5.608656406402588
+2025-02-01 17:27:32,645 - INFO - learning_rate: 5.085714285714286e-07
+2025-02-01 17:27:32,645 - INFO - epoch: 1.6608771168041685
+2025-02-01 17:29:57,100 - INFO - Training Step: 3850
+2025-02-01 17:29:57,100 - INFO - loss: 0.2251
+2025-02-01 17:29:57,100 - INFO - grad_norm: 5.858765125274658
+2025-02-01 17:29:57,100 - INFO - learning_rate: 4.371428571428572e-07
+2025-02-01 17:29:57,100 - INFO - epoch: 1.6717325227963524
+2025-02-01 17:32:13,745 - INFO - Training Step: 3875
+2025-02-01 17:32:13,746 - INFO - loss: 0.2232
+2025-02-01 17:32:13,746 - INFO - grad_norm: 6.0832977294921875
+2025-02-01 17:32:13,746 - INFO - learning_rate: 3.657142857142858e-07
+2025-02-01 17:32:13,746 - INFO - epoch: 1.6825879287885366
+2025-02-01 17:34:24,961 - INFO - Training Step: 3900
+2025-02-01 17:34:24,961 - INFO - loss: 0.2246
+2025-02-01 17:34:24,961 - INFO - grad_norm: 4.5426130294799805
+2025-02-01 17:34:24,962 - INFO - learning_rate: 2.942857142857143e-07
+2025-02-01 17:34:24,962 - INFO - epoch: 1.6934433347807207
+2025-02-01 17:36:46,351 - INFO - Training Step: 3925
+2025-02-01 17:36:46,352 - INFO - loss: 0.2033
+2025-02-01 17:36:46,352 - INFO - grad_norm: 4.880805015563965
+2025-02-01 17:36:46,352 - INFO - learning_rate: 2.228571428571429e-07
+2025-02-01 17:36:46,352 - INFO - epoch: 1.7042987407729049
+2025-02-01 17:39:08,707 - INFO - Training Step: 3950
+2025-02-01 17:39:08,707 - INFO - loss: 0.2202
+2025-02-01 17:39:08,708 - INFO - grad_norm: 6.8018622398376465
+2025-02-01 17:39:08,708 - INFO - learning_rate: 1.5142857142857144e-07
+2025-02-01 17:39:08,708 - INFO - epoch: 1.715154146765089
+2025-02-01 17:41:31,376 - INFO - Training Step: 3975
+2025-02-01 17:41:31,377 - INFO - loss: 0.2136
+2025-02-01 17:41:31,378 - INFO - grad_norm: 4.172975540161133
+2025-02-01 17:41:31,378 - INFO - learning_rate: 8e-08
+2025-02-01 17:41:31,378 - INFO - epoch: 1.7260095527572732
+2025-02-01 17:43:52,939 - INFO - Training Step: 4000
+2025-02-01 17:43:52,939 - INFO - loss: 0.2268
+2025-02-01 17:43:52,939 - INFO - grad_norm: 5.159233570098877
+2025-02-01 17:43:52,940 - INFO - learning_rate: 8.571428571428572e-09
+2025-02-01 17:43:52,940 - INFO - epoch: 1.7368649587494573
+2025-02-01 18:52:32,583 - INFO - Training Step: 4000
+2025-02-01 18:52:32,584 - INFO - eval_loss: 0.4494938850402832
+2025-02-01 18:52:32,584 - INFO - eval_wer: 29.91700577051291
+2025-02-01 18:52:32,584 - INFO - eval_runtime: 4119.6414
+2025-02-01 18:52:32,584 - INFO - eval_samples_per_second: 2.485
+2025-02-01 18:52:32,584 - INFO - eval_steps_per_second: 0.311
+2025-02-01 18:52:32,584 - INFO - epoch: 1.7368649587494573
+2025-02-01 18:52:32,584 - INFO - 🔍 Evaluation Metrics:
+2025-02-01 18:52:32,584 - INFO - eval_loss: 0.4494938850402832
+2025-02-01 18:52:32,584 - INFO - eval_wer: 29.91700577051291
+2025-02-01 18:52:32,584 - INFO - eval_runtime: 4119.6414
+2025-02-01 18:52:32,585 - INFO - eval_samples_per_second: 2.485
+2025-02-01 18:52:32,585 - INFO - eval_steps_per_second: 0.311
+2025-02-01 18:52:32,585 - INFO - epoch: 1.7368649587494573
+2025-02-01 18:52:36,322 - INFO - 💾 Model checkpoint saved at step 4000.
+2025-02-01 18:52:36,322 - INFO - 🚀 Epoch 1.7368649587494573 completed.
+2025-02-01 18:52:36,798 - INFO - Training Step: 4000
+2025-02-01 18:52:36,798 - INFO - train_runtime: 38369.9543
+2025-02-01 18:52:36,798 - INFO - train_samples_per_second: 1.668
+2025-02-01 18:52:36,799 - INFO - train_steps_per_second: 0.104
+2025-02-01 18:52:36,799 - INFO - total_flos: 1.846917703507968e+19
+2025-02-01 18:52:36,799 - INFO - train_loss: 0.41261480832099917
+2025-02-01 18:52:36,799 - INFO - epoch: 1.7368649587494573
+2025-02-01 18:52:36,803 - INFO - 🎉 Training Complete!

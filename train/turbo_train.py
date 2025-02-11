@@ -2,22 +2,41 @@
 # -*- coding: utf-8 -*-
 import torch
 import evaluate
+import logging
+import sys
+import os
+from datetime import datetime
 from datasets import load_dataset, Audio
 from transformers import (
     WhisperForConditionalGeneration,
     WhisperProcessor,
     Seq2SeqTrainer,
-    Seq2SeqTrainingArguments
+    Seq2SeqTrainingArguments,
+    TrainerCallback
 )
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
+# 📌 SET UP LOGGING TO FILE
+log_file = "training_turbo_log.txt"
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(log_file, mode="a"),  # Append mode to keep logs
+        logging.StreamHandler(sys.stdout)  # Also print to console
+    ]
+)
+
+logger = logging.getLogger(__name__)
+logger.info("🚀 Starting Whisper Turbo Fine-Tuning")
+
 # 🚀 Check GPU Availability
 device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"Using device: {device}")
+logger.info(f"Using device: {device}")
 
 # 📌 Load Common Voice Swahili Dataset
-print("Loading Common Voice Swahili dataset...")
+logger.info("Loading Common Voice Swahili dataset...")
 common_voice = load_dataset("mozilla-foundation/common_voice_11_0", "sw", split="train+validation")
 test_set = load_dataset("mozilla-foundation/common_voice_11_0", "sw", split="test")
 
@@ -26,8 +45,8 @@ common_voice = common_voice.remove_columns(["accent", "age", "client_id", "down_
 test_set = test_set.remove_columns(["accent", "age", "client_id", "down_votes", "gender", "locale", "path", "segment", "up_votes"])
 
 # 🚀 Load Whisper Turbo Model & Processor
-print("Loading Whisper Turbo model...")
-model_name = "openai/whisper-large-v3-turbo"  # Turbo version
+logger.info("Loading Whisper Turbo model...")
+model_name = "distil-whisper/large-turbo"  # Turbo version
 processor = WhisperProcessor.from_pretrained(model_name)
 model = WhisperForConditionalGeneration.from_pretrained(model_name).to(device)
 
@@ -37,7 +56,7 @@ model.generation_config.task = "transcribe"
 model.generation_config.forced_decoder_ids = None
 
 # 📌 Resample Audio to 16kHz
-print("Resampling audio to 16kHz...")
+logger.info("Resampling audio to 16kHz...")
 common_voice = common_voice.cast_column("audio", Audio(sampling_rate=16000))
 test_set = test_set.cast_column("audio", Audio(sampling_rate=16000))
 
@@ -49,7 +68,7 @@ def prepare_dataset(batch):
     batch["labels"] = processor.tokenizer(batch["sentence"]).input_ids
     return batch
 
-print("Processing dataset...")
+logger.info("Processing dataset...")
 common_voice = common_voice.map(prepare_dataset, remove_columns=["audio"])
 test_set = test_set.map(prepare_dataset, remove_columns=["audio"])
 
@@ -80,7 +99,7 @@ data_collator = DataCollatorSpeechSeq2SeqWithPadding(
 )
 
 # 🚀 WER Metric for Evaluation
-print("Loading Word Error Rate (WER) metric...")
+logger.info("Loading Word Error Rate (WER) metric...")
 metric = evaluate.load("wer")
 
 def compute_metrics(pred):
@@ -98,9 +117,9 @@ def compute_metrics(pred):
 # 🚀 Training Configuration (Optimized for 6GB VRAM)
 training_args = Seq2SeqTrainingArguments(
     output_dir="./whisper-turbo-sw",
-    per_device_train_batch_size=2,  # 🔹 Lower batch size to fit in 6GB VRAM
-    per_device_eval_batch_size=2,
-    gradient_accumulation_steps=8,  # 🔹 Simulate batch size of 16
+    per_device_train_batch_size=1,  # 🔹 Lower batch size to fit in 6GB VRAM
+    per_device_eval_batch_size=1,
+    gradient_accumulation_steps=16,  # 🔹 Simulate batch size of 16
     learning_rate=1e-5,
     warmup_steps=500,
     max_steps=5000,
@@ -116,6 +135,29 @@ training_args = Seq2SeqTrainingArguments(
     greater_is_better=False,
 )
 
+# ✅ Custom Callback for Logging Training Progress
+class LoggingCallback(TrainerCallback):
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        """Logs training metrics at each step."""
+        if logs:
+            logger.info(f"Training Step: {state.global_step}")
+            for key, value in logs.items():
+                logger.info(f"{key}: {value}")
+
+    def on_epoch_end(self, args, state, control, **kwargs):
+        """Logs summary at the end of each epoch."""
+        logger.info(f"🚀 Epoch {state.epoch} completed.")
+
+    def on_evaluate(self, args, state, control, metrics, **kwargs):
+        """Logs evaluation results."""
+        logger.info("🔍 Evaluation Metrics:")
+        for key, value in metrics.items():
+            logger.info(f"{key}: {value}")
+
+    def on_save(self, args, state, control, **kwargs):
+        """Logs checkpoint saving."""
+        logger.info(f"💾 Model checkpoint saved at step {state.global_step}.")
+
 # 🚀 Initialize Trainer
 trainer = Seq2SeqTrainer(
     args=training_args,
@@ -127,11 +169,16 @@ trainer = Seq2SeqTrainer(
     tokenizer=processor.feature_extractor,
 )
 
+# ✅ Add Callback for Logging
+trainer.add_callback(LoggingCallback())
+
 # Save processor before training
 processor.save_pretrained(training_args.output_dir)
 
 # 🚀 Start Fine-Tuning
-print("🚀 Starting fine-tuning...")
-trainer.train()
-
-print("🎉 Fine-tuning complete!")
+logger.info("🚀 Training started...")
+try:
+    trainer.train()
+    logger.info("🎉 Fine-tuning complete!")
+except Exception as e:
+    logger.error(f"🚨 Training crashed: {e}", exc_info=True)
