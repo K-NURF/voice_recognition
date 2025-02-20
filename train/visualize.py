@@ -6,7 +6,7 @@ pipe = pipeline(
     model="openai/whisper-small",
     tokenizer="openai/whisper-small",
     task="automatic-speech-recognition",
-    device="cpu"
+    device="cuda"
     )
 
 def transcribe(audio):

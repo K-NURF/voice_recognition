@@ -1,2 +1,7 @@
 venv/
 whisper-small-sw/
+media/
+parsed_metrics.json
+parsed_metrics_2.json
+training_log_run_2.txt
+.env

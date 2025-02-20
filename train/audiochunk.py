@@ -120,11 +120,11 @@ def compute_dynamic_thresholds(audio, sr, frame_length_samples, segment_length_s
         
         # Add the energy threshold to the array
         # The threshold is the mean plus the standard deviation of the energy in the segment
-        energy_thresholds.append(np.mean(energy) + np.std(energy))
+        energy_thresholds.append(np.mean(energy) + 3 * np.std(energy))
         
         # Add the ZCR threshold to the array
         # The threshold is the mean plus the standard deviation of ZCR in the segment
-        zcr_thresholds.append(np.mean(zcr) + np.std(zcr))
+        zcr_thresholds.append(np.mean(zcr) + 3 * np.std(zcr))
     
     # Return the lists of thresholds
     return energy_thresholds, zcr_thresholds
@@ -152,8 +152,7 @@ def split_audio(
     saves each chunk as a separate file within a dedicated directory for that audio file.
     """
     file_prefix = os.path.splitext(os.path.basename(input_file))[0]
-    dedicated_output_dir = os.path.join(output_dir, file_prefix)
-    os.makedirs(dedicated_output_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
 
     y, _ = librosa.load(input_file, sr=sr)
     chunks = analyze_chunks(y, sr, samples_per_ms(sr, adjust_to_frame_length(min_chunk_length_ms, frame_length_ms)),
@@ -162,13 +161,13 @@ def split_audio(
 
     with ThreadPoolExecutor() as executor:
         for i, (start, end) in enumerate(chunks):
-            executor.submit(save_chunk, y, sr, (start, end), i, dedicated_output_dir, file_prefix, output_format)
+            executor.submit(save_chunk, y, sr, (start, end), i, output_dir, file_prefix, output_format)
 
-    print(f"{len(chunks)} chunks created for {input_file} in {dedicated_output_dir}.")
+    print(f"{len(chunks)} chunks created for {input_file} in {output_dir}.")
 
 def process_directory(
-    source_dir, output_dir, output_format='wav', min_chunk_length_ms=5000,
-    max_chunk_length_ms=15000, frame_length_ms=30, sr=16000, overlap_ms=2000):
+    source_dir, output_dir, output_format='wav', min_chunk_length_ms=3000,
+    max_chunk_length_ms=7000, frame_length_ms=30, sr=16000, overlap_ms=2000):
     """
     Processes all audio files in a directory, splitting them into chunks.
 
@@ -184,8 +183,8 @@ def process_directory(
                 overlap_samples)
 
 def main():
-    source_dir = os.getcwd() + '/media/raw/'
-    output_dir = os.getcwd() + '/media/test/'
+    source_dir = os.getcwd() + '/media/'
+    output_dir = os.getcwd() + '/media/splits2'
     process_directory(source_dir, output_dir)
 
 if __name__ == "__main__":
