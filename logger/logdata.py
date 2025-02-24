@@ -18,7 +18,7 @@ data['training'] = []
 data['metadata'] = {}
 
 
-with open('/home/bitz/voice_recognition/training_log_run_2.txt', 'r') as fp:
+with open('training_log.txt', 'r',  encoding='utf-8') as fp:
     logs = fp.read()
 
 
@@ -131,10 +131,19 @@ for x in logs.split("\n"):
             if 'grad_norm' not in data['wiki']:
                 data['wiki']['grad_norm'] = {}
                 data['wiki']['grad_norm']['title'] = "Gradient Normalization"
-                data['wiki']['grad_norm']['text'] = "An lgorithm that automatically balances "
+                data['wiki']['grad_norm']['text'] = "An algorithm that automatically balances "
                 data['wiki']['grad_norm']['text'] += "training in deep multitask models by "
                 data['wiki']['grad_norm']['text'] += "dynamically tuning gradient magnitudes"
             dat['grad_norm'] = float(item[-1].split(":")[-1].lstrip().rstrip())
+
+        elif len(dat) and item[-1].find("epoch") > 0:
+            if 'epoch' not in data['wiki']:
+                data['wiki']['epoch'] = {}
+                data['wiki']['epoch']['title'] = "Epoch"
+                data['wiki']['epoch']['text'] = "This is one complete pass through the entire "
+                data['wiki']['epoch']['text'] += "training dataset during model training."
+
+            dat['epoch'] = float(item[-1].split(":")[-1].lstrip().rstrip())
 
         elif len(dat) and item[-1].find("learning_rate:") > 0:
             if 'learning_rate' not in data['wiki']:
@@ -176,7 +185,7 @@ for x in logs.split("\n"):
 
 if logt and 'init' in data['metadata']:
     data['metadata']['exit'] = timeseries(logt)
-    data['metadata']['epochs'] = len(data['training'])
+    # data['metadata']['epochs'] = len(data['training'])
     data['metadata']['time'] = data['metadata']['exit'] - data['metadata']['init']
 
 with open('training_log_new.json', 'w') as fp:
